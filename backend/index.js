@@ -4,10 +4,9 @@ const PORT = process.env.port;
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const { ReactRouter}= require("./Routes/ReactRouter")
 const { connection } = require("./Configs/db");
-
-
+const {userRouter}=require("./Routes/userRouter")
 // Middlewares... 
 app.use(express.json());
 app.use(
@@ -15,6 +14,9 @@ app.use(
     origin: "*",
   })
 );
+
+app.use("/product", ReactRouter)
+app.use("/user", userRouter)
 
 
 app.get("/", (req, res) => {
