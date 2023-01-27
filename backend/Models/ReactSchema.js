@@ -5,7 +5,9 @@ const reactSchema = mongoose.Schema({
     desc: {type:String, required:true},
     video: {type:String, required:true},
     img: {type:String, required:true},
-    category: {type:String, required:true}
+    category: {type:String, required:true}, 
+    price: {type:Number, required:true}
+    
 });
 
 const ReactModel = mongoose.model("react", reactSchema);
