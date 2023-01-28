@@ -44,6 +44,7 @@ const Page = ({ redux }) => {
         textDecoration="underline"
       >
         Learn MongoDB
+        {/* Mongo Db */}
       </Heading>
 
       <Grid
