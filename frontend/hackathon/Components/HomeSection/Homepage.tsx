@@ -15,8 +15,15 @@ import HomePageCourseCard from "./HomePageCourseCard";
 import { GiFlexibleStar } from "react-icons/gi";
 import { FcGlobe, FcMoneyTransfer } from "react-icons/fc";
 import { FaUsers } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
+  const router = useRouter();
+
+  const handleTech = () => {
+    router.push(`technicalconsultant/`);
+  };
+  
   return (
     <>
       <Container maxW={"100%"} bg={"white"} padding={2} color={"black"}>
@@ -59,6 +66,7 @@ const HomePage = () => {
                   backgroundColor: "white",
                   boxShadow: "0 1px 1px 1px #257CFF",
                 }}
+
               >
                 Contact Us
               </Button>
