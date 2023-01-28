@@ -1,0 +1,52 @@
+.redu {
+    width: 100%;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin-top: 80px;
+}
+.gridbox {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+
+.filters {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  
+}
+/* .box > * {
+    font-weight: bold;
+    color: tomato;
+}
+.box > * > span {
+    color: gray;
+} */
+
+
+@media all and (min-width: 769px) and (max-width: 1024px){
+    .gridbox {
+        grid-template-columns: repeat(2,1fr);
+
+    }
+    /* .gridbox > div > img {
+        border-radius: 50%;
+    } */
+}
+
+
+@media all and (min-width: 250px) and (max-width: 768px){
+    .gridbox {
+        grid-template-columns: repeat(1,1fr);
+
+    }
+    /* .gridbox > div > img {
+        border-radius: 50%;
+    } */
+}
