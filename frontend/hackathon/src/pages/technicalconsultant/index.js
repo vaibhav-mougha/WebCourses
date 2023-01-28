@@ -17,7 +17,7 @@ function techSupp() {
     if (room !== "") {
       socket.emit("join_room", room);
     }
-    console.log(room)
+    console.log(room);
   };
 
   const sendMessage = () => {
@@ -69,7 +69,10 @@ function techSupp() {
           }}
           mt="1rem"
         />
-        <Button onClick={joinRoom}  mt="1rem"> Join Room</Button>
+        <Button onClick={joinRoom} mt="1rem">
+          {" "}
+          Join Room
+        </Button>
         <Input
           placeholder="Message..."
           onChange={(event) => {
@@ -77,9 +80,17 @@ function techSupp() {
           }}
           mt="1rem"
         />
-        <Button onClick={sendMessage} mt="1rem"> Send Message</Button>
-        <Heading textAlign="left" mt="2rem"> Message:</Heading>
-        <Text textAlign="left" mt="1rem" fontSize="1.5rem">{messageReceived}</Text>
+        <Button onClick={sendMessage} mt="1rem">
+          {" "}
+          Send Message
+        </Button>
+        <Heading textAlign="left" mt="2rem">
+          {" "}
+          Message:
+        </Heading>
+        <Text textAlign="left" mt="1rem" fontSize="1.5rem">
+          {messageReceived}
+        </Text>
       </Box>
     </Box>
   );
