@@ -13,6 +13,11 @@ const { expressRouter } = require("./Routes/Express.route");
 const { nodeRouter } = require("./Routes/Node.route");
 const { mongoRouter } = require("./Routes/Mongo.route");
 
+// Socket.io
+const http = require("http");
+const { Server } = require("socket.io");
+const server = http.createServer(app);
+
 // Middlewares... 
 app.use(express.json());
 app.use(
@@ -38,6 +43,38 @@ app.use("/mongo",mongoRouter)
 
 app.get("/", (req, res) => {
   res.send("Welcome Home Page");
+});
+
+// Socket.io
+// const http = require('http').createServer(app);
+
+//Attached http server to the socket.io
+// const io = require('socket.io')(http);
+
+//Create a new connection
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+
+  socket.on("join_room", (data) => {
+    socket.join(data);
+  });
+
+  socket.on("send_message", (data) => {
+    // console.log(data)
+    // socket.to(data.room).emit("receive_message", data);
+    socket.broadcast.emit("receive_message", data);
+  });
+});
+
+server.listen(3001, () => {
+  console.log("SERVER IS RUNNING");
 });
 
 app.listen(PORT, async () => {
