@@ -23,6 +23,7 @@ import {
 } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import React from "react";
+import { useRouter } from "next/router";
 
 const SocialButton = ({
   children,
@@ -65,6 +66,12 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function LargeWithNewsletter() {
+  const router = useRouter();
+  
+  const handleHomeClick = () => {
+    router.push(`homepage/`);
+  };
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -102,6 +109,7 @@ export default function LargeWithNewsletter() {
                   fontFamily={"Lobster, cursive"}
                   fontWeight={600}
                   gap={"5px"}
+                  onClick={() => handleHomeClick()}
                 >
                   <Text> CODE</Text>
                   <Text color={"black"}> SEARCH</Text>

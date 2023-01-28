@@ -13,9 +13,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaLessThan, FaGreaterThan, FaSearchengin } from "react-icons/fa";
 import { MdBackpack } from "react-icons/md";
 import SignUpPopUp from "./SignUpPopUp";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
 
   const hamStyle = {
     justifyContent: "center",
@@ -36,6 +38,23 @@ const Navbar = () => {
     fontFamily: { Lobster: "cursive" },
     fontWeight: 600,
   };
+
+  const handleFullStackClick = () => {
+    router.push(`fullstack/`);
+  };
+
+  const handleBackEndClick = () => {
+    router.push(`backend/`);
+  };
+
+  const handleFrontEndClick = () => {
+    router.push(`frontend/`);
+  };
+
+  const handleHomeClick = () => {
+    router.push(`homepage/`);
+  };
+  
 
   return (
     <Box
@@ -74,6 +93,7 @@ const Navbar = () => {
             fontFamily={"Lobster, cursive"}
             fontWeight={600}
             gap={"5px"}
+            onClick={() => handleHomeClick()}
           >
             <Text> CODE</Text>
             <Text color={"#e3e9ee"}> SEARCH</Text>
@@ -101,7 +121,7 @@ const Navbar = () => {
             }}
           >
             <AiOutlineHome size={20} />
-            <Text fontSize={"18px"}>
+            <Text fontSize={"18px"}  onClick={() => handleFrontEndClick()}>
               FrontEnd <Hide below="lg">Courses</Hide>
             </Text>
           </Flex>
@@ -120,7 +140,7 @@ const Navbar = () => {
             }}
           >
             <MdBackpack size={18} />
-            <Text fontSize={"18px"}>BackEnd Courses</Text>
+            <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>BackEnd Courses</Text>
           </Flex>
 
           <Flex
@@ -137,7 +157,7 @@ const Navbar = () => {
             }}
           >
             <AiOutlineRocket size={20} />
-            <Text fontSize={"18px"}>Full Stack Courses</Text>
+            <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>Full Stack Courses</Text>
           </Flex>
 
           <Flex
@@ -179,7 +199,7 @@ const Navbar = () => {
                 }}
               >
                 <AiOutlineHome size={20} />
-                <Text fontSize={"18px"}>FrontEnd Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleFrontEndClick()}>FrontEnd Courses</Text>
               </Flex>
 
               <Flex
@@ -192,7 +212,7 @@ const Navbar = () => {
                 }}
               >
                 <MdBackpack size={18} />
-                <Text fontSize={"18px"}>BackEnd Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>BackEnd Courses</Text>
               </Flex>
 
               <Flex
@@ -205,7 +225,7 @@ const Navbar = () => {
                 }}
               >
                 <AiOutlineRocket size={20} />
-                <Text fontSize={"18px"}>Full Stack Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>Full Stack Courses</Text>
               </Flex>
 
               <Flex
