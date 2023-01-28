@@ -31,7 +31,7 @@
     }
   },
 
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/redux/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Components/Register.tsx", "src/pages/register/AuthContext.jsx", "src/pages/register/register.tsx", "src/pages/login.jsx", "src/pages/_app.jsx", "src/Redux/action.js", "src/Redux/actiontypes.js", "src/Redux/reducer.js", "src/Redux/store.js", "src/pages/signup/index.jsx", "src/pages/login/index.jsx"],
   "exclude": ["node_modules"]
 
 }
