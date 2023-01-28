@@ -1,0 +1,28 @@
+/* Navbar */
+.firstLetter {
+  font-size: 30px;
+  color: #fc766aff;
+  font-family: "Lobster", cursive;
+  font-weight: 600;
+}
+
+.lastLetter {
+  font-size: 24px;
+  color: #e3e9ee;
+  font-family: "Lobster", cursive;
+}
+
+.tabBox {
+  align-items: center;
+  color: white;
+  height: 40px;
+  padding: 0px 18px;
+  border-radius: 5px;
+  column-gap: 2.5px;
+}
+
+.tabBox:hover {
+  color: black;
+  background-color: #b7ced8;
+  box-shadow: 0 1px 1px 1px black;
+}
