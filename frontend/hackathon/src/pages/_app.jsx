@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer";
+import Navbar from "../../Components/HomeSection/Navbar";
+import Footer from "../../Components/HomeSection/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
