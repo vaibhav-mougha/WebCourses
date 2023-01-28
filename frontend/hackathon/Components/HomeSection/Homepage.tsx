@@ -19,7 +19,7 @@ import { FaUsers } from "react-icons/fa";
 const HomePage = () => {
   return (
     <>
-      <Container maxW={"100%"} bg={"#1E90FF"} padding={2}>
+      <Container maxW={"100%"} bg={"white"} padding={2} color={"black"}>
         <>
           <Flex
             height={"750px"}
@@ -42,7 +42,7 @@ const HomePage = () => {
               justifyContent={"flex-start"}
               direction={"column"}
               fontSize={"50px"}
-              color={"white"}
+              color={"black"}
               mt={-5}
             >
               <Text textAlign={"left"}>Learn Your</Text>
@@ -50,10 +50,15 @@ const HomePage = () => {
               <Text>From Here</Text>
               <Button
                 size="lg"
-                bg="#2F7693"
+                color="white"
+                backgroundColor= "#257CFF"
                 mt="24px"
                 fontSize={"24px"}
-                _hover={{ color: "black" }}
+                _hover={{
+                  color:"#257CFF",
+                  backgroundColor: "white",
+                  boxShadow: "0 1px 1px 1px #257CFF",
+                }}
               >
                 Contact Us
               </Button>
