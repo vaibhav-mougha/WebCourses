@@ -43,6 +43,8 @@ userRouter.post("/register", async (req, res) => {
   }
 });
 
+
+
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -60,7 +62,7 @@ userRouter.post("/login", async (req, res) => {
                 userName: user.name,
                 userType: user.userType,
               },
-              process.env.secretKey,
+              process.env.SecretKey,
               (err, token) => {
                 if (err) {
                   throw err;
