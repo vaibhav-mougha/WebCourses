@@ -20,10 +20,9 @@ const SignUpPopUp = () => {
         textAlign={"center"}
         border={"1px solid white"}
         _hover={{
-          color: "black",
-          backgroundColor: "#b7ced8",
-          boxShadow: "0 1px 1px 1px black",
-          border: "1px solid black",
+          color:"#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
         }}
       >
         Sign in for free

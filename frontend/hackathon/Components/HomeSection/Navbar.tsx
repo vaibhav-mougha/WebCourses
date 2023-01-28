@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactNode } from 'react';
 import { Box, Flex, Hide, Text, useDisclosure } from "@chakra-ui/react";
 import {
   Drawer,
@@ -6,7 +7,10 @@ import {
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
+  DrawerCloseButton,Button,
+  Link,useColorModeValue,
+  useColorMode,
+
 } from "@chakra-ui/react";
 import { AiOutlineHome, AiOutlineRocket } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -14,10 +18,28 @@ import { FaLessThan, FaGreaterThan, FaSearchengin } from "react-icons/fa";
 import { MdBackpack } from "react-icons/md";
 import SignUpPopUp from "./SignUpPopUp";
 import { useRouter } from "next/router";
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+
+const NavLink = ({ children }: { children: ReactNode }) => (
+  <Link
+    px={2}
+    py={1}
+    rounded={'md'}
+    _hover={{
+      textDecoration: 'none',
+      bg: useColorModeValue("#257CFF", "gray.900"),
+    }}
+    href={'#'}>
+    {children}
+  </Link>
+);
+
 
 const Navbar = () => {
+  
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const hamStyle = {
     justifyContent: "center",
@@ -59,7 +81,8 @@ const Navbar = () => {
   return (
     <Box
       w={"100%"}
-      bg={"#2F7693"}
+      // bg={"#2F7693"}
+      bg= {useColorModeValue("#257CFF", "gray.900")}
       p={"0px 15px"}
       position={"sticky"}
       top={0}
@@ -96,7 +119,7 @@ const Navbar = () => {
             onClick={() => handleHomeClick()}
           >
             <Text> CODE</Text>
-            <Text color={"#e3e9ee"}> SEARCH</Text>
+            <Text color={"white"}> SEARCH</Text>
           </Flex>
         </Flex>
 
@@ -115,9 +138,9 @@ const Navbar = () => {
             borderRadius="5px"
             columnGap="2.5px"
             _hover={{
-              color: "black",
-              backgroundColor: "#b7ced8",
-              boxShadow: "0 1px 1px 1px black",
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
             }}
           >
             <AiOutlineHome size={20} />
@@ -134,14 +157,18 @@ const Navbar = () => {
             borderRadius="5px"
             columnGap="2.5px"
             _hover={{
-              color: "black",
-              backgroundColor: "#b7ced8",
-              boxShadow: "0 1px 1px 1px black",
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
             }}
           >
             <MdBackpack size={18} />
             <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>BackEnd Courses</Text>
           </Flex>
+
+          
+
+
 
           <Flex
             alignItems="center"
@@ -151,14 +178,19 @@ const Navbar = () => {
             borderRadius="5px"
             columnGap="2.5px"
             _hover={{
-              color: "black",
-              backgroundColor: "#b7ced8",
-              boxShadow: "0 1px 1px 1px black",
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
             }}
           >
             <AiOutlineRocket size={20} />
             <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>Full Stack Courses</Text>
           </Flex>
+
+          <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <Box color="#257CFF"><MoonIcon /></Box> : <SunIcon />}
+              </Button>
+
 
           <Flex
             alignItems="center"
@@ -167,6 +199,7 @@ const Navbar = () => {
             p="0.5rem 1rem"
             borderRadius="5px"
             columnGap="2.5px"
+           
           >
             <SignUpPopUp />
           </Flex>
@@ -179,7 +212,7 @@ const Navbar = () => {
           p={"5px"}
           borderRadius={"5px"}
         >
-          <GiHamburgerMenu color="black" onClick={onOpen} size={"40px"} />
+          <GiHamburgerMenu color="#257CFF" onClick={onOpen} size={"40px"} />
         </Box>
 
         {/* HamBurger Drawer */}
@@ -194,8 +227,8 @@ const Navbar = () => {
                 style={hamStyle}
                 onClick={onClose}
                 _hover={{
-                  backgroundColor: "#b7ced8",
-                  boxShadow: "0 1px 1px 1px black",
+                  backgroundColor: "white",
+                  boxShadow: "0 1px 1px 1px #257CFF",
                 }}
               >
                 <AiOutlineHome size={20} />
@@ -207,8 +240,8 @@ const Navbar = () => {
                 style={hamStyle}
                 onClick={onClose}
                 _hover={{
-                  backgroundColor: "#b7ced8",
-                  boxShadow: "0 1px 1px 1px black",
+                  backgroundColor: "white",
+                  boxShadow: "0 1px 1px 1px #257CFF",
                 }}
               >
                 <MdBackpack size={18} />
@@ -220,8 +253,8 @@ const Navbar = () => {
                 style={hamStyle}
                 onClick={onClose}
                 _hover={{
-                  backgroundColor: "#b7ced8",
-                  boxShadow: "0 1px 1px 1px black",
+                  backgroundColor: "white",
+                  boxShadow: "0 1px 1px 1px #257CFF",
                 }}
               >
                 <AiOutlineRocket size={20} />
@@ -232,8 +265,8 @@ const Navbar = () => {
                 m="25px auto"
                 style={hamStyle}
                 _hover={{
-                  backgroundColor: "#b7ced8",
-                  boxShadow: "0 1px 1px 1px black",
+                  backgroundColor: "white",
+                  boxShadow: "0 1px 1px 1px #257CFF",
                 }}
               >
                 <SignUpPopUp />
