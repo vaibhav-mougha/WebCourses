@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }) {
    
     <ChakraProvider>
     <Provider store={store}>
+    <Navbar />
       <Component {...pageProps} />
+      <Footer />
       </Provider>
     </ChakraProvider>
     
