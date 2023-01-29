@@ -3,7 +3,7 @@
 
 <br/>
 
-# Deployed URL 👉 [Click here](https:)
+# Deployed URL 👉 [Click here](https://www.linkedin.com/feed/update/urn:li:activity:7025493624234647552/)
 
  
 ## Our Team Members
