@@ -44,10 +44,10 @@ const SignUpPopUp = () => {
         w={["85%", "90%", "400px", "400px"]}
         p="1rem 1.5rem"
       >
-        <Text fontSize="1.2rem" fontWeight="bold" color={"black"}>
+        <Text fontSize="1.2rem" fontWeight="bold" color="#257CFF">
           You could be getting lower prices.
         </Text>
-        <Text m="7px 0px" fontSize="0.8rem" color={"black"}>
+        <Text m="7px 0px" fontSize="0.8rem" color="#257CFF">
           Go GEEK. Save time and get more courses to explore.
         </Text>
 
@@ -92,7 +92,7 @@ const SignUpPopUp = () => {
           </Box>
         </MenuItem>
 
-        <Box borderTop="0.5px solid gray" color={"black"} p="1rem 0px">
+        <Box borderTop="0.5px solid gray" color="#257CFF" p="1rem 0px">
           <MenuItem fontSize="0.9rem">Feedback</MenuItem>
         </Box>
       </MenuList>

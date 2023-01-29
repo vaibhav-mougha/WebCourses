@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   const handleHomeClick = () => {
-    router.push(`homepage/`);
+    router.push(`/`);
   };
   
 
@@ -118,8 +118,8 @@ const Navbar = () => {
             gap={"5px"}
             onClick={() => handleHomeClick()}
           >
-            <Text> CODE</Text>
-            <Text color={"white"}> SEARCH</Text>
+            <Text> Web</Text>
+            <Text color={"white"}> Courses</Text>
           </Flex>
         </Flex>
 

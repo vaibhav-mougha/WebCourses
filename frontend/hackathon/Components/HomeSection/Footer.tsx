@@ -69,7 +69,7 @@ export default function LargeWithNewsletter() {
   const router = useRouter();
   
   const handleHomeClick = () => {
-    router.push(`homepage/`);
+    router.push(`/`);
   };
 
   return (
@@ -111,8 +111,8 @@ export default function LargeWithNewsletter() {
                   gap={"5px"}
                   onClick={() => handleHomeClick()}
                 >
-                  <Text> CODE</Text>
-                  <Text color={"black"}> SEARCH</Text>
+                  <Text> Web</Text>
+                  <Text color={"#257CFF"}> Courses</Text>
                 </Flex>
               </Flex>
             </Box>
