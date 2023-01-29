@@ -22,7 +22,17 @@ const Page = ({redux}) => {
     
   return (
     <Box mt="2rem">
-        <Button mt="1rem" ml="3rem" onClick = {() => router.back()}>Go Back</Button>
+        <Button mt="1rem"
+        ml="3rem"
+        onClick={() => router.back()}
+        fontSize={"24px"}
+        color="white"
+        backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
+        }}>Go Back</Button>
         <Box key={redux._id} 
         // border="2px solid black"     
                     mt="3rem">
@@ -40,7 +50,23 @@ const Page = ({redux}) => {
                 textAlign={"center"}
                 onClick = {() => handleClick(redux._id)}
               >
-                <Heading fontSize={"2xl"} fontFamily={"body"} >
+                <Heading 
+                fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+                fontFamily={"body"}
+                mt="3rem"
+                mb="1rem"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                textDecoration="underline"
+                color="#257CFF"
+                // backgroundColor="#257CFF"
+                _hover={{
+                  color: "#257CFF",
+                  // backgroundColor: "white",
+                  // boxShadow: "0 1px 1px 1px #257CFF",
+                }}
+                >
                   {redux.heading}
                 </Heading>
                 <Box 

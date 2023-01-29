@@ -34,18 +34,50 @@ const Page = () => {
 
   return (
     <Box className={style.redu} mb="5rem">
-      <Button mt="1rem" ml="3rem" onClick={() => router.back()}>
+      <Button
+        mt="1rem"
+        ml="3rem"
+        onClick={() => router.back()}
+        fontSize={"24px"}
+        color="white"
+        backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
+        }}
+      >
         Go Back
       </Button>
 
-      <Heading fontSize={{base:"4xl",md:"5xl",lg:"5xl"} }color="#0A1C93" fontFamily={"body"} mt="3rem" mb="1rem" display="flex" justifyContent="center" alignItems="center" textDecoration="underline">
-                BackEnd Courses
-              </Heading>
+      <Heading
+        fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+        fontFamily={"body"}
+        mt="3rem"
+        mb="1rem"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        textDecoration="underline"
+        color="#257CFF"
+        // backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          // backgroundColor: "white",
+          // boxShadow: "0 1px 1px 1px #257CFF",
+        }}
+      >
+        BackEnd Courses
+      </Heading>
 
       <Grid
         className={style.gridbox}
         textAlign="left"
-        templateColumns={{base:'repeat(1, 1fr)',md:'repeat(2, 1fr)',lg:'repeat(3, 1fr)'}}
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
         gap={6}
       >
         <Box onClick={() => handleExpressClick()}>
@@ -93,7 +125,11 @@ const Page = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes.
+                Express is a node js web application framework that provides
+                broad features for building web and mobile applications. It is
+                used to build a single page, multipage, and hybrid web
+                application. It's a layer built on the top of the Node js that
+                helps manage servers and routes.
               </Text>
               <Box color="gray">Reading Time : 07:35 hrs max</Box>
               <Stack
@@ -176,7 +212,10 @@ const Page = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                Node JS allows developers for executing JavaScript code outside of a browser. Backend and frontend of our app can be written in JavaScript. That enables developers to share some code and allows one team to work on the whole application.
+                Node JS allows developers for executing JavaScript code outside
+                of a browser. Backend and frontend of our app can be written in
+                JavaScript. That enables developers to share some code and
+                allows one team to work on the whole application.
               </Text>
               <Box color="gray">Reading Time : 05:35 hrs max</Box>
               <Stack
@@ -259,7 +298,11 @@ const Page = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                Using MongoDB can provide many benefits to a software development team. Its flexible schema makes it easy to evolve and store data in a way that is easy for programmers to work with. MongoDB is also built to scale up quickly and supports all the main features of modern databases such as transactions.
+                Using MongoDB can provide many benefits to a software
+                development team. Its flexible schema makes it easy to evolve
+                and store data in a way that is easy for programmers to work
+                with. MongoDB is also built to scale up quickly and supports all
+                the main features of modern databases such as transactions.
               </Text>
               <Box color="gray">Reading Time : 01:35 hrs max</Box>
               <Stack
@@ -296,7 +339,6 @@ const Page = () => {
             </Box>
           </Center>
         </Box>
-
       </Grid>
     </Box>
   );

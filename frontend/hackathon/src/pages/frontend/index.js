@@ -34,18 +34,50 @@ const Page = () => {
 
   return (
     <Box className={style.redu} mb="5rem">
-      <Button mt="1rem" ml="3rem" onClick={() => router.back()}>
+      <Button
+        mt="1rem"
+        ml="3rem"
+        onClick={() => router.back()}
+        fontSize={"24px"}
+        color="white"
+        backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
+        }}
+      >
         Go Back
       </Button>
 
-      <Heading fontSize={{base:"4xl",md:"5xl",lg:"5xl"} }color="#0A1C93" fontFamily={"body"} mt="3rem" mb="1rem" display="flex" justifyContent="center" alignItems="center" textDecoration="underline">
-                FrontEnd Courses
-              </Heading>
+      <Heading
+        fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+        fontFamily={"body"}
+        mt="3rem"
+        mb="1rem"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        textDecoration="underline"
+        color="#257CFF"
+        // backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          // backgroundColor: "white",
+          // boxShadow: "0 1px 1px 1px #257CFF",
+        }}
+      >
+        FrontEnd Courses
+      </Heading>
 
       <Grid
         className={style.gridbox}
         textAlign="left"
-        templateColumns={{base:'repeat(1, 1fr)',md:'repeat(2, 1fr)',lg:'repeat(3, 1fr)'}}
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
         gap={6}
       >
         <Box onClick={() => handleClick()}>
@@ -266,7 +298,11 @@ const Page = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                One of the features of Next. js is the way it renders on the server side and client side, otherwise known as “universal apps.” That's crucial for the single page applications (SPAs) it builds, and how it helps those SPAs have much-improved success in terms of SEO (search engine optimization).
+                One of the features of Next. js is the way it renders on the
+                server side and client side, otherwise known as “universal
+                apps.” That's crucial for the single page applications (SPAs) it
+                builds, and how it helps those SPAs have much-improved success
+                in terms of SEO (search engine optimization).
               </Text>
               <Box color="gray">Reading Time : 01:35 hrs max</Box>
               <Stack
@@ -303,7 +339,6 @@ const Page = () => {
             </Box>
           </Center>
         </Box>
-
       </Grid>
     </Box>
   );

@@ -28,13 +28,22 @@ const Page = ({ redux }) => {
 
   return (
     <Box className={style.redu} mb="5rem">
-      <Button mt="1rem" ml="3rem" onClick={() => router.back()}>
+      <Button mt="1rem"
+        ml="3rem"
+        onClick={() => router.back()}
+        fontSize={"24px"}
+        color="white"
+        backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
+        }}>
         Go Back
       </Button>
 
       <Heading
         fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
-        color="#0A1C93"
         fontFamily={"body"}
         mt="3rem"
         mb="1rem"
@@ -42,6 +51,12 @@ const Page = ({ redux }) => {
         justifyContent="center"
         alignItems="center"
         textDecoration="underline"
+        color="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          // backgroundColor: "white",
+          // boxShadow: "0 1px 1px 1px #257CFF",
+        }}
       >
         Learn React
       </Heading>

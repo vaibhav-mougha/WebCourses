@@ -48,12 +48,11 @@ app.get("/", (req, res) => {
   res.send("Welcome Home Page");
 });
 
+app.get((req,res) => {
+  res.status(404).send("Opps page couldn't be found")
+})
+
 // Socket.io
-// const http = require('http').createServer(app);
-
-//Attached http server to the socket.io
-// const io = require('socket.io')(http);
-
 //Create a new connection
 const io = new Server(server, {
   cors: {

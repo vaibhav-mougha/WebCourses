@@ -66,7 +66,7 @@ const HomePage = () => {
                   backgroundColor: "white",
                   boxShadow: "0 1px 1px 1px #257CFF",
                 }}
-
+                onClick={() => handleTech()}
               >
                 Contact Us
               </Button>
