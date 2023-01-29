@@ -163,6 +163,22 @@ const Page = () => {
                   Subject: Express
                 </Badge>
               </Stack>
+              <Button
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -249,6 +265,22 @@ const Page = () => {
                   Subject: NodeJS
                 </Badge>
               </Stack>
+              <Button
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -336,6 +368,22 @@ const Page = () => {
                   Subject: MongoDB
                 </Badge>
               </Stack>
+              <Button
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>
