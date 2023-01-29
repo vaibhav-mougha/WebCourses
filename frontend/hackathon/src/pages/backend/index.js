@@ -9,16 +9,35 @@ import {
   Text,
   Stack,
   Button,
-  Link,
   Badge,
   useColorModeValue,
-  Modal,
   Grid,
+  Progress,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getLocalData } from "../../Utils/LocalStorage";
+import { getSession } from "next-auth/react";
 
 const Page = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const isAuth = getLocalData("isAuth");
+
+  useEffect(() => {
+    const securePage = async () => {
+      const session = await getSession();
+      if (!isAuth) {
+        router.push(`login/`);
+      } else {
+        setLoading(false);
+      }
+    };
+    securePage();
+  }, []);
+
+  if (loading) {
+    return <Progress hasStripe value={64} mt="2rem" />;
+  }
 
   const handleExpressClick = () => {
     router.push(`express/`);

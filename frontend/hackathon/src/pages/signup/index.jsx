@@ -56,7 +56,7 @@ const Signup = () => {
           title: "Account created.",
           description: "We've created your account for you.",
           status: "success",
-          duration: 9000,
+          duration: 3000,
           isClosable: true,
           position: "top",
         });
@@ -71,7 +71,7 @@ const Signup = () => {
           title: "User already exist",
           description: "Please  login.",
           status: "error",
-          duration: 9000,
+          duration: 3000,
           isClosable: true,
           position: "top",
         });

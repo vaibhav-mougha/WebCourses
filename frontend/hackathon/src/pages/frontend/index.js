@@ -1,6 +1,8 @@
 import style from "./redu.module.css";
 import { StarIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import { getSession } from "next-auth/react";
 import {
   Heading,
   Avatar,
@@ -9,16 +11,33 @@ import {
   Text,
   Stack,
   Button,
-  Link,
   Badge,
   useColorModeValue,
-  Modal,
   Grid,
+  Progress,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { getLocalData } from "../../Utils/LocalStorage";
 
 const Page = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const isAuth = getLocalData("isAuth");
+
+  useEffect(() => {
+    const securePage = async () => {
+      const session = await getSession();
+      if (!isAuth) {
+        router.push(`login/`);
+      } else {
+        setLoading(false);
+      }
+    };
+    securePage();
+  }, []);
+
+  if (loading) {
+    return <Progress hasStripe value={64} mt="2rem" />;
+  }
 
   const handleClick = () => {
     router.push(`redux/`);
@@ -163,21 +182,21 @@ const Page = () => {
                 </Badge>
               </Stack>
               <Button
-              mt="1.5rem"
-            bg="#31AE33"
-            borderRadius="1rem"
-            variant="solid"
-            // ml="3rem"
-            color="white"
-            _hover={{
-              background: "white",
-              color: "#31AE33",
-              border: "2px solid #31AE33",
-            }}
-            ml="1rem"
-          >
-            Add Course
-          </Button>
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -266,21 +285,21 @@ const Page = () => {
                 </Badge>
               </Stack>
               <Button
-              mt="1.5rem"
-            bg="#31AE33"
-            borderRadius="1rem"
-            variant="solid"
-            // ml="3rem"
-            color="white"
-            _hover={{
-              background: "white",
-              color: "#31AE33",
-              border: "2px solid #31AE33",
-            }}
-            ml="1rem"
-          >
-            Add Course
-          </Button>
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -369,21 +388,21 @@ const Page = () => {
                 </Badge>
               </Stack>
               <Button
-              mt="1.5rem"
-            bg="#31AE33"
-            borderRadius="1rem"
-            variant="solid"
-            // ml="3rem"
-            color="white"
-            _hover={{
-              background: "white",
-              color: "#31AE33",
-              border: "2px solid #31AE33",
-            }}
-            ml="1rem"
-          >
-            Add Course
-          </Button>
+                mt="1.5rem"
+                bg="#31AE33"
+                borderRadius="1rem"
+                variant="solid"
+                // ml="3rem"
+                color="white"
+                _hover={{
+                  background: "white",
+                  color: "#31AE33",
+                  border: "2px solid #31AE33",
+                }}
+                ml="1rem"
+              >
+                Add Course
+              </Button>
             </Box>
           </Center>
         </Box>

@@ -50,9 +50,9 @@ export default function Login() {
         saveLocalData("isAuth", isAuth);
         toast({
           title: "Login Successfull.",
-          description: "Welcome to code search ",
+          description: "Welcome to Web Courses ",
           status: "success",
-          duration: 9000,
+          duration: 3000,
           isClosable: true,
           position: "top",
         });
@@ -62,7 +62,7 @@ export default function Login() {
           title: "User Not found",
           description: "Enter the correct credentials.",
           status: "error",
-          duration: 9000,
+          duration: 3000,
           isClosable: true,
           position: "top",
         });
