@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import "../login/login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getLogin } from "../../Redux/action";
 import { getLocalData, saveLocalData } from "../../Utils/LocalStorage";
-import { useToast, Text, Spinner, Input, Box, Heading, Button } from "@chakra-ui/react";
+import {
+  useToast,
+  Text,
+  Spinner,
+  Input,
+  Box,
+  Heading,
+  Button,
+  Flex,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 const initial = {
@@ -23,6 +31,16 @@ export default function Login() {
       isError: state.isError,
     };
   });
+
+  const inputCSS = {
+    width: "100%",
+    padding: "12px",
+    borderRadius: "4px",
+    boxSizing: "borderBox",
+    marginTop: "6px",
+    marginBottom: "16px",
+    fontSize: "14px",
+  };
 
   const { email, password } = formdata;
 
@@ -73,64 +91,78 @@ export default function Login() {
   const nameLocal = getLocalData("name") || "";
 
   return (
-    <Box mt="4rem" mb="4rem">
-      <form className="form">
-      <Heading
-            fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+    <Box
+      margin={"auto"}
+      width={{ base: "80%", sm: "80%", md: "50%", lg: "35%" }}
+      mt="4rem"
+      mb="4rem"
+    >
+      <Box
+        padding={"20px"}
+        boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"
+      >
+        <form margin="auto" padding="20px" borderRadius="5px" height={"90vh"}>
+          <Heading
+            fontSize={{ base: "3xl", sm: "3xl", md: "5xl", lg: "5xl" }}
             fontFamily={"body"}
-            mt="2rem"
+            mt="1rem"
             mb="2rem"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            textAlign={"center"}
             textDecoration="underline"
             color="#257CFF"
-            // backgroundColor="#257CFF"
             _hover={{
               color: "#257CFF",
-              // backgroundColor: "white",
-              // boxShadow: "0 1px 1px 1px #257CFF",
             }}
-          >Login Form</Heading>
-        {nameLocal ? (
-          <Text mb={"20px"} fontSize={"18px"} color={"green"}>
-            You are login, keep explore
-          </Text>
-        ) : null}
-        <Input
-          placeholder="Enter email"
-          onChange={handleChange1}
-          value={email}
-        />{" "}
-        <br />
-        <Input
-          placeholder="Enter Password"
-          onChange={handleChange3}
-          value={password}
-        />
-        <p style={{ marginTop: "5px", marginBottom: "5px" }}>
-          Selecting this checkbox will keep you signed into your account on this
-          device until you sign out. Do not select this on shared devices.
-        </p>
-        <p style={{ marginTop: "5px", marginBottom: "5px" }}>
-          By creating an account, I agree to the Terms & Conditions{" "}
-          <a href="T&C">Terms and Conditions</a>,{" "}
-          <a href="https://www.tripoto.com/privacy-policy">
-            {" "}
-            Privacy Statement
-          </a>{" "}
-          and <a href=""> Rewards Terms and Conditions.</a>
-        </p>
-        {isLoading ? (
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="blue.500"
-            size="xl"
+          >
+            Login Form
+          </Heading>
+          {nameLocal ? (
+            <Text mb={"20px"} fontSize={"18px"} color={"green"}>
+              You are login, keep explore
+            </Text>
+          ) : null}
+          <Input
+            style={inputCSS}
+            placeholder="Enter email"
+            onChange={handleChange1}
+            value={email}
+          />{" "}
+          <br />
+          <Input
+            style={inputCSS}
+            placeholder="Enter Password"
+            type={"password"}
+            onChange={handleChange3}
+            value={password}
           />
-        ) : null}
-        <Button className="para" onClick={handleClick}  mt="1rem"
+          <p
+            style={{
+              marginTop: "5px",
+              marginBottom: "5px",
+              fontSize: "80%",
+              color: "rgb(97, 97, 97)",
+            }}
+          >
+            By logging in, I agree to the Terms & Conditions{" "}
+            <a href="T&C">Terms and Conditions</a>,{" "}
+            <a href="#"> Privacy Statement</a> and{" "}
+            <a href=""> Rewards Terms and Conditions.</a>
+          </p>
+          {isLoading ? (
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
+          ) : null}
+          <Button
+            width={"100%"}
+            margin={"auto"}
+            marginTop={"15px"}
+            onClick={handleClick}
             fontSize={"24px"}
             color="white"
             backgroundColor="#257CFF"
@@ -139,26 +171,42 @@ export default function Login() {
               backgroundColor: "white",
               boxShadow: "0 1px 1px 1px #257CFF",
             }}
-            display="flex"
-            justifyContent="center"
-            alignItems="center">
-          Login
-        </Button>
-        <p>Don't have an account?</p>
-        <p>or continue with</p>
-        <div>
-          <img
-            src="https://a.travel-assets.com/egds/marks/apple.svg"
-            alt=""
-            style={{ width: "20px", height: "20px" }}
-          />
-          <img
-            src="https://a.travel-assets.com/egds/marks/facebook.svg"
-            alt=""
-            style={{ width: "20px", height: "20px" }}
-          />
-        </div>
-      </form>
+          >
+            Login
+          </Button>
+          <p
+            style={{
+              marginTop: "20px",
+              fontSize: "90%",
+              color: "rgb(97, 97, 97)",
+              textAlign: "center",
+            }}
+          >
+            Don't have an account?
+          </p>
+          <p
+            style={{
+              fontSize: "90%",
+              color: "rgb(97, 97, 97)",
+              textAlign: "center",
+            }}
+          >
+            or continue with
+          </p>
+          <Flex margin={"auto"} width={"30px"} height={"30px"} gap={"10px"}>
+            <img
+              src="https://a.travel-assets.com/egds/marks/apple.svg"
+              alt=""
+              style={{ width: "20px", height: "20px" }}
+            />
+            <img
+              src="https://a.travel-assets.com/egds/marks/facebook.svg"
+              alt=""
+              style={{ width: "20px", height: "20px" }}
+            />
+          </Flex>
+        </form>
+      </Box>
     </Box>
   );
 }

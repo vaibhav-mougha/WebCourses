@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../signup/signup.css";
 import { getRegistration } from "../../Redux/action";
-import { useDispatch, useSelector } from "react-redux";
-import { Box, Button, Heading, Input, useToast } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { Box, Button, Flex, Heading, Input, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 const initial = {
@@ -18,6 +17,16 @@ const Signup = () => {
   const router = useRouter();
   const [formdata, setformdata] = useState(initial);
   const dispatch = useDispatch();
+
+  const inputCSS = {
+    width: "100%",
+    padding: "12px",
+    borderRadius: "4px",
+    boxSizing: "borderBox",
+    marginTop: "6px",
+    marginBottom: "16px",
+    fontSize: "14px",
+  };
 
   const handleChange = (event) => {
     console.log(event.target.value);
@@ -80,55 +89,90 @@ const Signup = () => {
   };
 
   return (
-    <Box className="full" mt="4rem" mb="4rem">
-      <Box className="main">
-        <form className="form">
+    <Box
+      margin={"auto"}
+      width={{ base: "80%", sm: "80%", md: "50%", lg: "35%" }}
+      mt="4rem"
+      mb="4rem"
+    >
+      <Box
+        padding={"20px"}
+        boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"
+      >
+        <form margin="auto" padding="20px" borderRadius="5px" height={"90vh"}>
           <Heading
-            fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+            fontSize={{ base: "2xl", sm: "2xl", md: "3xl", lg: "5xl" }}
             fontFamily={"body"}
-            mt="2rem"
+            mt="1rem"
             mb="2rem"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            textAlign={"center"}
             textDecoration="underline"
             color="#257CFF"
-            // backgroundColor="#257CFF"
             _hover={{
               color: "#257CFF",
-              // backgroundColor: "white",
-              // boxShadow: "0 1px 1px 1px #257CFF",
             }}
           >
             Create an account
           </Heading>
-          <Input placeholder="Enter Name" onChange={handleChange} />
+          <Input
+            style={inputCSS}
+            placeholder="Enter Name"
+            onChange={handleChange}
+          />
           <br />
-          <Input placeholder="Enter email" onChange={handleChange1} /> <br />
-          <Input placeholder="Enter Mobile" onChange={handleChange2} /> <br />
-          <Input placeholder="Enter Password" onChange={handleChange3} />
+          <Input
+            style={inputCSS}
+            placeholder="Enter email"
+            onChange={handleChange1}
+          />
+          <br />
+          <Input
+            style={inputCSS}
+            placeholder="Enter Mobile"
+            onChange={handleChange2}
+          />
+          <br />
+          <Input
+            style={inputCSS}
+            placeholder="Enter Password"
+            onChange={handleChange3}
+          />
           <br />
           <select
-            className="select"
             id=""
             onChange={handleChange4}
-            style={{ marginTop: "10px" }}
+            style={{
+              marginTop: "10px",
+              padding: "10px",
+              backgroundColor: "white",
+              border: "none",
+              color: "#257cff",
+              borderRadius: "5px",
+            }}
           >
             <option>Select Person</option>
             <option value="user">User</option>
             <option value="Admin">Admin</option>
           </select>
           <br />
-          <p style={{ marginTop: "10px", marginBottom: "15px" }}>
+          <p
+            style={{
+              marginTop: "10px",
+              marginBottom: "15px",
+              fontSize: "80%",
+              color: "rgb(97, 97, 97)",
+            }}
+          >
             By creating an account, I agree to the the terms & Conditions
             <a href=""> Terms and Conditions</a>,
             <a href=""> Privacy Statement</a>&{" "}
             <a href=""> Rewards Terms and Conditions.</a>
           </p>
           <Button
-            className="para"
+            width={"100%"}
+            margin={"auto"}
             onClick={handleClick}
-            mt="1rem"
             fontSize={"24px"}
             color="white"
             backgroundColor="#257CFF"
@@ -137,14 +181,20 @@ const Signup = () => {
               backgroundColor: "white",
               boxShadow: "0 1px 1px 1px #257CFF",
             }}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
           >
             Continue
           </Button>
-          <p>Already have an account?</p>
-          <Box>
+          <p
+            style={{
+              fontSize: "90%",
+              color: "rgb(97, 97, 97)",
+              textAlign: "center",
+              padding: "15px",
+            }}
+          >
+            Already have an account?
+          </p>
+          <Flex margin={"auto"} width={"30px"} height={"30px"} gap={"10px"}>
             <img
               src="https://a.travel-assets.com/egds/marks/apple.svg"
               alt=""
@@ -155,7 +205,7 @@ const Signup = () => {
               alt=""
               style={{ width: "20px", height: "20px" }}
             />
-          </Box>
+          </Flex>
         </form>
       </Box>
     </Box>
