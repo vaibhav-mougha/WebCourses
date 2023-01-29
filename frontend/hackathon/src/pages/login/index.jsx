@@ -64,6 +64,7 @@ export default function Login() {
         saveLocalData("name", res.payload.username);
         saveLocalData("useremail", res.payload.useremail);
         saveLocalData("usertype", res.payload.usertype);
+        saveLocalData("mobile", res.payload.mobile);
         let isAuth = true;
         saveLocalData("isAuth", isAuth);
         toast({
@@ -144,10 +145,8 @@ export default function Login() {
               color: "rgb(97, 97, 97)",
             }}
           >
-            By logging in, I agree to the Terms & Conditions{" "}
-            <a href="T&C">Terms and Conditions</a>,{" "}
-            <a href="#"> Privacy Statement</a> and{" "}
-            <a href=""> Rewards Terms and Conditions.</a>
+            By logging in, I agree to the Terms & Conditions, Privacy Statement
+            and Rewards Terms and Conditions.
           </p>
           {isLoading ? (
             <Spinner

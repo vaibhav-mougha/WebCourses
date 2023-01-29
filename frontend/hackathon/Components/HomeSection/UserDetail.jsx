@@ -31,6 +31,7 @@ const UserDetail = () => {
     localStorage.removeItem("useremail");
     localStorage.removeItem("usertype");
     localStorage.removeItem("isAuth");
+    localStorage.removeItem("mobile");
     setTimeout(() => {
       router.push("/");
     }, 2000);
@@ -49,7 +50,7 @@ const UserDetail = () => {
     setTimeout(() => {
       router.push("/user");
     }, 2000);
-  }
+  };
 
   return (
     <>
@@ -94,6 +95,7 @@ const UserDetail = () => {
               textAlign="center"
               fontSize="16px"
               onClick={handleUser}
+              cursor={"pointer"}
             >
               {userType} Section
             </Badge>

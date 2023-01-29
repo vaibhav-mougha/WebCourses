@@ -164,10 +164,8 @@ const Signup = () => {
               color: "rgb(97, 97, 97)",
             }}
           >
-            By creating an account, I agree to the the terms & Conditions
-            <a href=""> Terms and Conditions</a>,
-            <a href=""> Privacy Statement</a>&{" "}
-            <a href=""> Rewards Terms and Conditions.</a>
+            By creating an account, I agree to the the Terms & Conditions,
+            Privacy Statement & Rewards Terms and Conditions.
           </p>
           <Button
             width={"100%"}

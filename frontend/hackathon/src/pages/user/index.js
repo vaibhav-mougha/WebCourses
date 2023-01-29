@@ -8,14 +8,20 @@ import {
   Tab,
   Text,
   Heading,
+  Flex,
 } from "@chakra-ui/react";
 import Front from "./Front";
+import { getLocalData } from "../../Utils/LocalStorage";
 
 const Page = () => {
+  const userName = getLocalData("name") || "";
+  const userEmail = getLocalData("useremail") || "";
+  const mobile = getLocalData("mobile") || "";
+
   return (
     <div>
       <Box bg="#EBF7FF">
-        <Box color="black" align="center" justify="center" pb="5rem"  pt="5rem">
+        <Box color="black" align="center" justify="center" pb="5rem" pt="5rem">
           {/* Container */}
 
           <Box
@@ -43,7 +49,21 @@ const Page = () => {
               borderRadius="1rem"
               p="1rem"
             >
-              <Text fontSize="2rem">Happy Learning !...</Text>
+              <Flex
+                margin={"auto"}
+                justifyContent={"space-between"}
+                alignItems={"center"}
+                padding={"0 15px"}
+                fontWeight={600}
+                fontSize={20}
+              >
+                <Text>Name : {userName}</Text>
+                <Text>Email: {userEmail}</Text>
+                <Text>Mobile Number: {mobile}</Text>
+              </Flex>
+              <Text fontSize="2rem" color={"#257CFF"} marginTop={"10px"}>
+                Happy Learning !...
+              </Text>
 
               <Text fontSize="1.5rem" color="gray">
                 Select any specific tabs for watching courses videos
