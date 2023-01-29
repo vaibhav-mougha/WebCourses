@@ -7,8 +7,19 @@ import {
   Box,
   Text,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const SignUpPopUp = () => {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push(`login/`);
+  };
+
+  const handleSignup = () => {
+    router.push(`signup/`);
+  };
+  
   return (
     <Menu>
       <MenuButton
@@ -20,7 +31,7 @@ const SignUpPopUp = () => {
         textAlign={"center"}
         border={"1px solid white"}
         _hover={{
-          color:"#257CFF",
+          color: "#257CFF",
           backgroundColor: "white",
           boxShadow: "0 1px 1px 1px #257CFF",
         }}
@@ -46,10 +57,16 @@ const SignUpPopUp = () => {
             m="10px 0px"
             p={"0.4rem "}
             color="white"
-            bg="#3662d8"
+            backgroundColor="#257CFF"
+            _hover={{
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
+            }}
             textAlign={"center"}
             fontSize="20px"
             borderRadius={"1rem"}
+            onClick={() => handleLogin()}
           >
             Sign in
           </Box>
@@ -59,17 +76,17 @@ const SignUpPopUp = () => {
             m="15px 0px"
             w="100%"
             color="white"
-            bg="#3662d8"
+            backgroundColor="#257CFF"
             _hover={{
-              color: "black",
-              backgroundColor: "#b7ced8",
-              boxShadow: "0 1px 1px 1px black",
-              border: "1px solid black",
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
             }}
             p={"0.4rem "}
             textAlign={"center"}
             fontSize="20px"
             borderRadius={"1rem"}
+            onClick={() => handleSignup()}
           >
             Sign up, it's free
           </Box>

@@ -2,10 +2,13 @@ import "./techSupp.css";
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 import { Box, Button, Input, Heading, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const socket = io.connect("http://localhost:3001");
 
 function techSupp() {
+  const router = useRouter();
+
   //Room State
   const [room, setRoom] = useState("");
 
@@ -34,9 +37,24 @@ function techSupp() {
 
   return (
     <Box className="techSupp" mb="4rem">
+      <Button
+        mt="1rem"
+        ml="3rem"
+        onClick={() => router.back()}
+        fontSize={"24px"}
+        color="white"
+        backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          backgroundColor: "white",
+          boxShadow: "0 1px 1px 1px #257CFF",
+        }}
+      >
+        Go Back
+      </Button>
+
       <Heading
         fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
-        color="#0A1C93"
         fontFamily={"body"}
         mt="3rem"
         mb="1rem"
@@ -44,8 +62,15 @@ function techSupp() {
         justifyContent="center"
         alignItems="center"
         textDecoration="underline"
+        color="#257CFF"
+        // backgroundColor="#257CFF"
+        _hover={{
+          color: "#257CFF",
+          // backgroundColor: "white",
+          // boxShadow: "0 1px 1px 1px #257CFF",
+        }}
       >
-        FullStack Courses
+        Technical Consultant for Courses
       </Heading>
 
       <Box
@@ -69,7 +94,19 @@ function techSupp() {
           }}
           mt="1rem"
         />
-        <Button onClick={joinRoom} mt="1rem">
+        <Button
+          onClick={joinRoom}
+          mt="1rem"
+          ml="3rem"
+          fontSize={"24px"}
+          color="white"
+          backgroundColor="#257CFF"
+          _hover={{
+            color: "#257CFF",
+            backgroundColor: "white",
+            boxShadow: "0 1px 1px 1px #257CFF",
+          }}
+        >
           {" "}
           Join Room
         </Button>
@@ -80,11 +117,36 @@ function techSupp() {
           }}
           mt="1rem"
         />
-        <Button onClick={sendMessage} mt="1rem">
+        <Button
+          onClick={sendMessage}
+          mt="1rem"
+          ml="3rem"
+          fontSize={"24px"}
+          color="white"
+          backgroundColor="#257CFF"
+          _hover={{
+            color: "#257CFF",
+            backgroundColor: "white",
+            boxShadow: "0 1px 1px 1px #257CFF",
+          }}
+        >
           {" "}
           Send Message
         </Button>
-        <Heading textAlign="left" mt="2rem">
+        <Heading
+          textAlign="left"
+          mt="2rem"
+          fontFamily={"body"}
+          mb="1rem"
+          textDecoration="underline"
+          color="#257CFF"
+          // backgroundColor="#257CFF"
+          _hover={{
+            color: "#257CFF",
+            // backgroundColor: "white",
+            // boxShadow: "0 1px 1px 1px #257CFF",
+          }}
+        >
           {" "}
           Message:
         </Heading>
