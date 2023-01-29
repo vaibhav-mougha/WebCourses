@@ -75,6 +75,11 @@
 </div>
 <br/>
 
+## 🚀 User Features
+- Login and Signup User Account
+- Various courses for the authenticated users
+- Ask the doubts to Techincal Consultants
+
 
 ## Signup Page :
 
@@ -177,7 +182,8 @@ On this journey we faced many issues, but we keep motivated each other with pati
 
 Source Code(GitHub link):- https://github.com/vaibhav-mougha/WebCourses
 
+## Show your support
+
+Give a ⭐️ if you like this project!
 
 ### Thank you
-
-
