@@ -41,9 +41,13 @@ export default function Login() {
     console.log(formdata);
     dispatch(getLogin(formdata)).then((res) => {
       console.log(res);
-      saveLocalData("token", res.payload.token);
-      saveLocalData("token", res.payload.username);
       if (res.payload.msg === "logged in success") {
+        saveLocalData("token", res.payload.token);
+        saveLocalData("name", res.payload.username);
+        saveLocalData("useremail", res.payload.useremail);
+        saveLocalData("usertype", res.payload.usertype);
+        let isAuth = true;
+        saveLocalData("isAuth", isAuth);
         toast({
           title: "Login Successfull.",
           description: "Welcome to code search ",
