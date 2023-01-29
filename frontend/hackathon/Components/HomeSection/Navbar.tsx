@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 import { Box, Flex, Hide, Text, useDisclosure } from "@chakra-ui/react";
 import {
   Drawer,
@@ -7,10 +7,11 @@ import {
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,Button,
-  Link,useColorModeValue,
+  DrawerCloseButton,
+  Button,
+  Link,
+  useColorModeValue,
   useColorMode,
-
 } from "@chakra-ui/react";
 import { AiOutlineHome, AiOutlineRocket } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -18,28 +19,30 @@ import { FaLessThan, FaGreaterThan, FaSearchengin } from "react-icons/fa";
 import { MdBackpack } from "react-icons/md";
 import SignUpPopUp from "./SignUpPopUp";
 import { useRouter } from "next/router";
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { getLocalData } from "../../src/Utils/LocalStorage";
+import UserDetail from "./UserDetail";
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
-    rounded={'md'}
+    rounded={"md"}
     _hover={{
-      textDecoration: 'none',
+      textDecoration: "none",
       bg: useColorModeValue("#257CFF", "gray.900"),
     }}
-    href={'#'}>
+    href={"#"}
+  >
     {children}
   </Link>
 );
 
-
 const Navbar = () => {
-  
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const { colorMode, toggleColorMode } = useColorMode();
+  const isAuth = getLocalData("isAuth");
 
   const hamStyle = {
     justifyContent: "center",
@@ -76,13 +79,12 @@ const Navbar = () => {
   const handleHomeClick = () => {
     router.push(`homepage/`);
   };
-  
 
   return (
     <Box
       w={"100%"}
       // bg={"#2F7693"}
-      bg= {useColorModeValue("#257CFF", "gray.900")}
+      bg={useColorModeValue("#257CFF", "gray.900")}
       p={"0px 15px"}
       position={"sticky"}
       top={0}
@@ -144,7 +146,7 @@ const Navbar = () => {
             }}
           >
             <AiOutlineHome size={20} />
-            <Text fontSize={"18px"}  onClick={() => handleFrontEndClick()}>
+            <Text fontSize={"18px"} onClick={() => handleFrontEndClick()}>
               FrontEnd <Hide below="lg">Courses</Hide>
             </Text>
           </Flex>
@@ -163,12 +165,10 @@ const Navbar = () => {
             }}
           >
             <MdBackpack size={18} />
-            <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>BackEnd Courses</Text>
+            <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>
+              BackEnd <Hide below="lg">Courses</Hide>
+            </Text>
           </Flex>
-
-          
-
-
 
           <Flex
             alignItems="center"
@@ -184,13 +184,20 @@ const Navbar = () => {
             }}
           >
             <AiOutlineRocket size={20} />
-            <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>Full Stack Courses</Text>
+            <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>
+              Full Stack <Hide below="lg">Courses</Hide>
+            </Text>
           </Flex>
 
           <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <Box color="#257CFF"><MoonIcon /></Box> : <SunIcon />}
-              </Button>
-
+            {colorMode === "light" ? (
+              <Box color="#257CFF">
+                <MoonIcon />
+              </Box>
+            ) : (
+              <SunIcon />
+            )}
+          </Button>
 
           <Flex
             alignItems="center"
@@ -199,9 +206,8 @@ const Navbar = () => {
             p="0.5rem 1rem"
             borderRadius="5px"
             columnGap="2.5px"
-           
           >
-            <SignUpPopUp />
+            {isAuth ? <UserDetail /> : <SignUpPopUp />}
           </Flex>
         </Flex>
 
@@ -232,7 +238,9 @@ const Navbar = () => {
                 }}
               >
                 <AiOutlineHome size={20} />
-                <Text fontSize={"18px"} onClick={() => handleFrontEndClick()}>FrontEnd Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleFrontEndClick()}>
+                  FrontEnd Courses
+                </Text>
               </Flex>
 
               <Flex
@@ -245,7 +253,9 @@ const Navbar = () => {
                 }}
               >
                 <MdBackpack size={18} />
-                <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>BackEnd Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleBackEndClick()}>
+                  BackEnd Courses
+                </Text>
               </Flex>
 
               <Flex
@@ -258,7 +268,9 @@ const Navbar = () => {
                 }}
               >
                 <AiOutlineRocket size={20} />
-                <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>Full Stack Courses</Text>
+                <Text fontSize={"18px"} onClick={() => handleFullStackClick()}>
+                  Full Stack Courses
+                </Text>
               </Flex>
 
               <Flex
@@ -269,7 +281,7 @@ const Navbar = () => {
                   boxShadow: "0 1px 1px 1px #257CFF",
                 }}
               >
-                <SignUpPopUp />
+                {isAuth ? <UserDetail /> : <SignUpPopUp />}
               </Flex>
             </DrawerBody>
           </DrawerContent>
