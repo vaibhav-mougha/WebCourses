@@ -54,7 +54,7 @@
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="vercel" />
 </a>  
 <a href="https://web-course-backend.vercel.app/">
-  <img src="https://img.shields.io/badge/Cyclic-430098?style=for-the-badge&logo=cyclic&logoColor=white" alt="heroku" />
+  <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=whit" align="center" alt="git"/>
   </a>
 </p>
 
