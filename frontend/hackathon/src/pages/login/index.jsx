@@ -56,7 +56,7 @@ export default function Login() {
           isClosable: true,
           position: "top",
         });
-        router.push(`homepage/`);
+        router.push(`/`);
       } else if (res.payload.msg === "User Not found") {
         toast({
           title: "User Not found",

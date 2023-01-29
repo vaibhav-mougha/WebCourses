@@ -32,7 +32,7 @@ const UserDetail = () => {
     localStorage.removeItem("usertype");
     localStorage.removeItem("isAuth");
     setTimeout(() => {
-      router.push("/homepage");
+      router.push("/");
     }, 2000);
 
     dispatch({ type: SIGNOUT });
@@ -44,6 +44,12 @@ const UserDetail = () => {
       position: "top",
     });
   };
+
+  const handleUser = () => {
+    setTimeout(() => {
+      router.push("/user");
+    }, 2000);
+  }
 
   return (
     <>
@@ -65,7 +71,7 @@ const UserDetail = () => {
             textAlign="center"
             fontSize="1.2rem"
             fontWeight="bold"
-            color={"#3662d8"}
+            color={"#257CFF"}
           >
             Hi, {userName}
           </Text>
@@ -73,22 +79,23 @@ const UserDetail = () => {
             textAlign="center"
             m="7px 0px"
             fontSize="1rem"
-            color={"#3662d8"}
+            color={"#257CFF"}
           >
             {userEmail}
           </Text>
           <Flex justify="center">
             <Badge
               w="60%"
-              bg="#3662d8"
+              bg="#257CFF"
               color="white"
               p="0.3rem 0.5rem"
               borderRadius="20px"
               mb="5px"
               textAlign="center"
               fontSize="16px"
+              onClick={handleUser}
             >
-              {userType}
+              {userType} Section
             </Badge>
           </Flex>
           <Box p="0.5rem">
@@ -99,7 +106,7 @@ const UserDetail = () => {
               m="10px auto"
               p="0.4rem "
               color="white"
-              bg="#3662d8"
+              bg="#257CFF"
               textAlign="center"
               fontSize="18px"
               borderRadius="1rem"
