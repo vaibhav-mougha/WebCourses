@@ -69,11 +69,26 @@
 <h3>Go through the home page to know more about our website.</h3>
 <br/>
 
-
 <div align="center">
   <img width="60%" alt="Home page" src="https://user-images.githubusercontent.com/107460451/215320859-2057394b-4a7a-4993-926a-581a803d6ba4.jpg" />
 </div>
 <br/>
+
+## Technical Consultant :
+
+<h3>Here users can ask their doubts from number of Techincal Consultant to communicate, interact regarding the web courses.</h3>
+
+<br/>
+
+<div align="center" >
+    <img width="60%" src="https://user-images.githubusercontent.com/107460451/215322623-5808be1f-3ec6-4f11-8d24-d42f16436a9d.jpg" alt="Trains page 1"/>
+</div>
+<br/>
+                                                                                                                                                                    <div align="center">
+    <img height="350" src="https://user-images.githubusercontent.com/107460451/215322429-3064b50f-f223-4fd1-ace4-d778062e3c28.jpg" alt="Trains page 2"/>          
+</div>
+<br/>                                                                                                                                 
+
 
 ## 🚀 User Features
 - Login and Signup User Account
