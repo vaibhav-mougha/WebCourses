@@ -64,9 +64,9 @@ input[type="submit"]{
     display: block;
     margin: auto;
     padding: 10px 10px;
-    border: 1px solid rgb(200,50,89);
+    /* border: 1px solid rgb(200,50,89); */
     border-radius: 5px;
-    background-color:rgb(200,50,89);
+    /* background-color:rgb(200,50,89); */
     font-weight: bold;
     color: white;
     width: 400px;
@@ -101,9 +101,9 @@ input.class{
     padding: 10px; 
     background-color:white; 
     border:none;
-    
+    color:#257CFF
+}
 
-}
-.select:hover{
+/* .select:hover{
     background-color:rgb(230, 154, 154);
-}
+} */

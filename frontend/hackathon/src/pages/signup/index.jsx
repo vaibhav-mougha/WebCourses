@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../signup/signup.css";
 import { getRegistration } from "../../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
-import { Input, useToast } from '@chakra-ui/react'
+import { Box, Button, Heading, Input, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-
 
 const initial = {
   name: "",
@@ -15,7 +14,7 @@ const initial = {
 };
 
 const Signup = () => {
-  const toast = useToast()
+  const toast = useToast();
   const router = useRouter();
   const [formdata, setformdata] = useState(initial);
   const dispatch = useDispatch();
@@ -45,46 +44,64 @@ const Signup = () => {
     e.preventDefault();
     // console.log(formdata);
     dispatch(getRegistration(formdata)).then((res) => {
-      console.log(res)
+      console.log(res);
 
-      if (res && res.payload && res.payload.data && res.payload.data.msg==="registred"){
-          toast({
-            title: 'Account created.',
-            description: "We've created your account for you.",
-            status: 'success',
-            duration: 9000,
-            isClosable: true,
-            position:"top"
-          })
-          router.push(`login/`);
-         
-      } else if (res && res.payload && res.payload.data && res.payload.data.msg==="email is allready added try to login"){
+      if (
+        res &&
+        res.payload &&
+        res.payload.data &&
+        res.payload.data.msg === "registred"
+      ) {
         toast({
-          title: 'User already exist',
-          description: "Please  login.",
-          status: 'error',
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
           duration: 9000,
           isClosable: true,
-          position:"top"
-        })
+          position: "top",
+        });
+        router.push(`login/`);
+      } else if (
+        res &&
+        res.payload &&
+        res.payload.data &&
+        res.payload.data.msg === "email is allready added try to login"
+      ) {
+        toast({
+          title: "User already exist",
+          description: "Please  login.",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+          position: "top",
+        });
       }
     });
   };
 
   return (
-    <div className="full">
-      <div className="main">
+    <Box className="full" mt="4rem" mb="4rem">
+      <Box className="main">
         <form className="form">
-          <h2
-            style={{
-              textAlign: "center",
-              fontStyle: "italic",
-              fontWeight: "bold",
-              fontSize: "20px",
+          <Heading
+            fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+            fontFamily={"body"}
+            mt="2rem"
+            mb="2rem"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            textDecoration="underline"
+            color="#257CFF"
+            // backgroundColor="#257CFF"
+            _hover={{
+              color: "#257CFF",
+              // backgroundColor: "white",
+              // boxShadow: "0 1px 1px 1px #257CFF",
             }}
           >
             Create an account
-          </h2>
+          </Heading>
           <Input placeholder="Enter Name" onChange={handleChange} />
           <br />
           <Input placeholder="Enter email" onChange={handleChange1} /> <br />
@@ -108,11 +125,26 @@ const Signup = () => {
             <a href=""> Privacy Statement</a>&{" "}
             <a href=""> Rewards Terms and Conditions.</a>
           </p>
-          <button className="para" onClick={handleClick}>
+          <Button
+            className="para"
+            onClick={handleClick}
+            mt="1rem"
+            fontSize={"24px"}
+            color="white"
+            backgroundColor="#257CFF"
+            _hover={{
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
+            }}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
             Continue
-          </button>
+          </Button>
           <p>Already have an account?</p>
-          <div>
+          <Box>
             <img
               src="https://a.travel-assets.com/egds/marks/apple.svg"
               alt=""
@@ -123,10 +155,10 @@ const Signup = () => {
               alt=""
               style={{ width: "20px", height: "20px" }}
             />
-          </div>
+          </Box>
         </form>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

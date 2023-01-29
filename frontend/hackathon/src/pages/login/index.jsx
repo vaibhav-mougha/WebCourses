@@ -3,7 +3,7 @@ import "../login/login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getLogin } from "../../Redux/action";
 import { getLocalData, saveLocalData } from "../../Utils/LocalStorage";
-import { useToast, Text, Spinner, Input } from "@chakra-ui/react";
+import { useToast, Text, Spinner, Input, Box, Heading, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 const initial = {
@@ -41,7 +41,6 @@ export default function Login() {
     console.log(formdata);
     dispatch(getLogin(formdata)).then((res) => {
       console.log(res);
-
       if (res.payload.msg === "logged in success") {
         saveLocalData("token", res.payload.token);
         saveLocalData("name", res.payload.username);
@@ -74,18 +73,25 @@ export default function Login() {
   const nameLocal = getLocalData("name") || "";
 
   return (
-    <>
+    <Box mt="4rem" mb="4rem">
       <form className="form">
-        <h2
-          style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontStyle: "italic",
-            fontSize: "20px",
-          }}
-        >
-          Login Form
-        </h2>
+      <Heading
+            fontSize={{ base: "4xl", md: "5xl", lg: "5xl" }}
+            fontFamily={"body"}
+            mt="2rem"
+            mb="2rem"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            textDecoration="underline"
+            color="#257CFF"
+            // backgroundColor="#257CFF"
+            _hover={{
+              color: "#257CFF",
+              // backgroundColor: "white",
+              // boxShadow: "0 1px 1px 1px #257CFF",
+            }}
+          >Login Form</Heading>
         {nameLocal ? (
           <Text mb={"20px"} fontSize={"18px"} color={"green"}>
             You are login, keep explore
@@ -124,9 +130,20 @@ export default function Login() {
             size="xl"
           />
         ) : null}
-        <button className="para" onClick={handleClick}>
+        <Button className="para" onClick={handleClick}  mt="1rem"
+            fontSize={"24px"}
+            color="white"
+            backgroundColor="#257CFF"
+            _hover={{
+              color: "#257CFF",
+              backgroundColor: "white",
+              boxShadow: "0 1px 1px 1px #257CFF",
+            }}
+            display="flex"
+            justifyContent="center"
+            alignItems="center">
           Login
-        </button>
+        </Button>
         <p>Don't have an account?</p>
         <p>or continue with</p>
         <div>
@@ -142,6 +159,6 @@ export default function Login() {
           />
         </div>
       </form>
-    </>
+    </Box>
   );
 }
