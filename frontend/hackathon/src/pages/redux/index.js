@@ -168,7 +168,7 @@ const Page = ({ redux }) => {
 export default Page;
 
 export async function getServerSideProps() {
-  let res = await fetch("http://localhost:8080/redux/");
+  let res = await fetch("https://web-course-backend.vercel.app/redux/");
   let data = await res.json();
 
   return {

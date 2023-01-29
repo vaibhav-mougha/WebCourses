@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getRegistration = (data) => (dispatch) => {
     dispatch({ type: types.REGISTRATION_REQUEST })
-    return axios.post("http://localhost:8080/user/register", data)
+    return axios.post("https://web-course-backend.vercel.app/user/register", data)
         .then((res) => {
             // console.log(res)
            return dispatch({ type: types.REGISTRATION_SUCCESS, payload: res })
@@ -15,7 +15,7 @@ export const getRegistration = (data) => (dispatch) => {
 
 export const getLogin = (data) => (dispatch) => {
     dispatch({ type: types.LOGIN_REQUEST })
-    return axios.post("http://localhost:8080/user/login", data)
+    return axios.post("https://web-course-backend.vercel.app/user/login", data)
         .then((res) => {
             // console.log(res)
            return dispatch({ type: types.LOGIN_SUCCESS, payload: res.data })

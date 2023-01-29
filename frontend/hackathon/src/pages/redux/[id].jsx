@@ -126,7 +126,7 @@ const Page = ({ redux }) => {
 };
 
 export async function getStaticPaths() {
-  let response = await fetch(`http://localhost:8080/redux`);
+  let response = await fetch(`https://web-course-backend.vercel.app/redux`);
   let data = await response.json();
 
   return {
@@ -142,7 +142,7 @@ export async function getStaticProps(context) {
     params: { id },
   } = context;
 
-  let response = await fetch(`http://localhost:8080/redux/${id}`);
+  let response = await fetch(`https://web-course-backend.vercel.app/redux/${id}`);
   let data = await response.json();
   return {
     props: {
