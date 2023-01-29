@@ -1,5 +1,5 @@
 # Welcome to WebCourses
-<h3>We provide a variety of web courses for users to learn, thrive and also have fun! Free Tutorials, Lots of Articles ,Webinars by Industry Experts. Knowledge is power !</h3>
+<h3>We provide a variety of web courses for users to learn, thrive and also have fun! Free Tutorials, Lots of Articles ,Webinars by Industry Experts. It has a number of experts to communicate, interact and for asking the doubts.</h3>
 
 <br/>
 
